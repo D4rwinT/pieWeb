@@ -1,4 +1,5 @@
 import Tarjeta from './Tarjeta';
+import GaleriaComidas from './GaleriaComidas';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         </div>
 
         {/* Carrusel */}
-        <div className="overflow-x-auto snap-x flex flex-row items-center pl-6 mt-4 pt-12 pb-8 bg-gradient-to-b from-gray-100 to-gray-200 text-center gap-8">
+        <div className="overflow-x-auto snap-x flex flex-row items-center pr-6 pl-6 mt-4 pt-12 pb-8 bg-gradient-to-b from-gray-100 to-gray-200 text-center gap-8">
           <Tarjeta 
           imagen="img/pie3.jpg" 
           titulo="Pie 2025"
@@ -54,6 +55,8 @@ function App() {
         />
         </div>
       </div>
+
+      <GaleriaComidas pais="Argentinian" titulo="Argentina" />
 
       <div class="flex flex-col items-center mt-4 mx-4 p-4 bg-gray-100 text-center">
         <p>Mi <em>primera</em> <strong> Página Web</strong>.</p>
