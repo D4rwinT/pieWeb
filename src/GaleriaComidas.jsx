@@ -13,7 +13,7 @@ function GaleriaComidas({ pais, titulo }) {
       try {
         const respuesta = await axios.get(
           `https://www.themealdb.com/api/json/v1/1/filter.php?a=${pais}`,
-          { signal: controller.signal } // Conectamos el cable de cancelación
+          { signal: controller.signal }
         );
         // ¡Listo! No hubo que hacer "await respuesta.json()"
         setComidas(respuesta.data.meals || []); 
@@ -36,15 +36,14 @@ function GaleriaComidas({ pais, titulo }) {
   }, [pais]);
 
   return (
-    <div className="relative w-full bg-white mt-12 pt-12 p-8 rounded-xl border border-gray-300 shadow-sm">
-      
-      {/* Etiqueta */}
-      <div className="absolute top-0 left-8 -translate-y-1/2 bg-indigo-600 text-white px-6 py-2 rounded-lg shadow-lg font-bold text-lg tracking-wide border-4 border-white uppercase">
-        Comida {titulo}
-      </div>
+    <div className="relative mt-12">
+        {/* Etiqueta de Recientes */}
+        <div className="absolute top-0 left-8 -translate-y-1/2 bg-gradient-to-b from-indigo-400 to-indigo-600 text-white px-6 py-2 rounded-full shadow-lg font-bold text-2xl tracking-wide">
+          Comida de {titulo}
+        </div>
 
-      {/* Carrusel */}
-      <div className="overflow-x-auto snap-x flex flex-row items-center gap-8 pb-4">
+        {/* Carrusel */}
+        <div className="overflow-x-auto snap-x flex flex-row items-center pr-6 pl-6 mt-4 pt-12 pb-8 bg-gradient-to-b from-gray-100 to-gray-200 text-center gap-8">
         {comidas.map((plato) => (
           <Tarjeta 
             key={plato.idMeal} 
